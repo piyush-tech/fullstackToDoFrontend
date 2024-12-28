@@ -19,8 +19,8 @@ const addTodo = (text,setText,setToDo) =>{
     .catch((err)=> console.log(err))
 }
 
-const updateToDo = (toDoId,setToDo) =>{
-    axios.post(`${baseUrl}/delete`,{_id:toDoId})
+const updateToDo = (toDoId, text, setText, setToDo, setIsUpdating) =>{
+    axios.post(`${baseUrl}/update`,{_id:toDoId,text})
     .then(()=>{
         setText("")
         setIsUpdating(false)
